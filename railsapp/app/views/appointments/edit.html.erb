@@ -1,0 +1,15 @@
+<h1>Edit the Appointment here!</h1>
+<%= form_for :appointment, url: appointment_path(@cita), method: :patch do |f| %>
+    <p>
+        <%= f.label :user_id %>        
+        <%= f.collection_select(:user_id, User.all, :id, :email) %>                
+    </p>        
+    <p> 
+        <%= f.label :date %>              
+        <%= f.datetime_field :my_date %>
+    </p>        
+    <p>
+        <%= f.submit "Update"%>
+    </p>
+
+<% end %>

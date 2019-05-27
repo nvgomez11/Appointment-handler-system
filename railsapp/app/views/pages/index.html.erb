@@ -1,0 +1,21 @@
+<% if current_user %>    
+    <%= link_to "Sign out", destroy_user_session_path,
+    method: :delete %>    
+
+    <h1><%= @content %></h1>        
+    
+    <%= link_to  "Appointments", appointments_path %>
+    <% if policy(current_user).update? %>
+        <%= link_to  "New Appointments", new_appointment_path %>    
+        <%= link_to  "Employees", employees_path %>
+        <%= link_to  "New Employee", new_employee_path %>        
+    <% end %>
+    
+            
+<% else %>
+    <%= link_to  "Sign up", new_user_registration_path %>
+    <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+
+
+

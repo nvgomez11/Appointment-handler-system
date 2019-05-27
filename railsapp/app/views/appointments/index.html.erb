@@ -1,0 +1,28 @@
+<% if current_user %>    
+
+    <h2>Appointments</h2>    
+    <br>
+    <!-- Ciclo que me recorre todos los empleeados recuperados del controlador-->
+    <% @cita_list.each do |cita| %>  
+        
+        <div class="well">
+            
+            <% @employee_email = @employee.find(cita.user_id).email.split("@")[0]%>       
+                             
+
+            <h4><%= @employee_email %></h4> 
+            <h4><%= cita.my_date %></h4>
+
+            <% if policy(cita).update? %>
+                <%= link_to  "See", appointment_path(cita) %>     
+            <% end %>
+        </div>
+            
+        
+
+        <hr>
+        
+    <% end %>
+                
+<% end %>
+

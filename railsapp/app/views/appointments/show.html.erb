@@ -1,0 +1,11 @@
+<h1>Specific appointment</h1>
+
+<% @employee_email = @employee.find(@cita.user_id).email.split("@")[0]%>
+
+<h3> <%= @employee_email %></h3>
+<h3> <%= @cita.my_date %></h3>
+
+<%= link_to  "edit", edit_appointment_path %>
+<%= link_to  "Delete", appointment_path(@cita), 
+                        method: :delete,
+                        data: {confirm: 'Are you sure?'} %>

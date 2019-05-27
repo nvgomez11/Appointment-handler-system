@@ -1,0 +1,14 @@
+<h1>These are all the employees</h1>
+<br>
+<!-- Ciclo que me recorre todos los empleeados recuperados del controlador-->
+<% @employees_list.each do |employee| %>    
+
+    <div class="well">
+        <h4><%=employee.email %></h4> 
+        <%=link_to  "See", employee_path(employee)%>    
+        <hr>
+
+    </div>
+    
+    
+<% end %>

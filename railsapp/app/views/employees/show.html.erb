@@ -1,0 +1,14 @@
+<h1> Specific employee </h1>
+
+<h3> <%= @employee.email %></h3>
+
+<p>
+    <%= link_to  "Edit", edit_employee_path(@employee)  %>
+    <%= link_to  "Delete", employee_path(@employee), 
+                            method: :delete,
+                            data: {confirm: 'Are you sure?'} %>
+</p>
+
+<hr>
+
+

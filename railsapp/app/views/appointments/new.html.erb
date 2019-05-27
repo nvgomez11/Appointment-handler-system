@@ -1,0 +1,16 @@
+<h1>New Appointment!</h1>
+<br>
+<%= form_for :appointment, url: appointments_path do |f| %>
+    <p>
+        <%= f.label :user_id %>        
+        <%= f.collection_select(:user_id, User.all, :id, :email) %>                
+    </p>        
+    <p> 
+        <%= f.label :date %>              
+        <%= f.datetime_field :my_date %>
+    </p>        
+    <p>
+        <%= f.submit "Create"%>
+    </p>
+
+<% end %>
