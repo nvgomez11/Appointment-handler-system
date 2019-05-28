@@ -1,2 +1,24 @@
-# Appointment-handler-system
-This ruby on rails application was created to handle the appointments in a beauty salon. It has a default administrator account who has the privileges of Create, Read, Update and Delete appointments and employees. The system has been developed using the gem Devise for authentication and Pundit for authorization. It also returns an API which provides all the appointments and the specific appointment of a given employee.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
