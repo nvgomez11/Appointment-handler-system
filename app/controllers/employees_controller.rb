@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
     def index
-        @employees_list = User.all
+        @employees_list = User.all        
     end
 
     def show
@@ -34,6 +34,10 @@ class EmployeesController < ApplicationController
 
     def destroy
         @employee = User.find(params[:id])
+        ##destroy asociated records to that user first
+        @cita_list = Appointment.where('user_id = ?', @employee.id)        
+        @cita_list.destroy_all
+        ## then destroy the user
         @employee.destroy
 
         redirect_to employees_path    
